@@ -76,6 +76,63 @@ class LinkedList:
         for _ in range(index):
             current_node = current_node.next
         return current_node
+    
+    def set_value(self, index: int, value):
+        current_node = self.get(index)
+        if current_node is not None:
+            current_node.value = value
+            return True
+        else:
+            return False
+        
+    def insert(self, index: int, value):
+        if index < 0 or index > self.length:
+            return False
+        elif index == 0:
+            self.prepend(value)
+        elif index == self.length:
+            self.append(value)
+        else:
+            new_node = Node(value)
+            current = self.head
+            previous = None
+            for _ in range(index):
+                previous = current
+                current = current.next
+            previous.next = new_node
+            new_node.next = current
+            self.length += 1
+        return True
+    
+    def remove(self, index: int):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        elif index == self.length - 1:
+            return self.pop()
+        else:
+            previous = self.get(index - 1)
+            current = previous.next
+            previous.next = current.next
+            current.next = None
+            self.length -= 1
+            return current
+
+    def reverse(self):
+        if self.length <= 1:
+            return True
+        previous = None
+        current = self.head
+        next = current.next
+        self.tail = current
+        while current is not None:
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+        self.head = previous
+        return True
 
 print("Before Pop:")
 my_linked_list = LinkedList(4)
@@ -85,6 +142,48 @@ my_linked_list.print_list()
 
 
 print(f"Value of get node 1: {my_linked_list.get(1).value}")
+my_linked_list.set_value(1, 100)
+print(f"Value of node 1 after set to 100: {my_linked_list.get(1).value}")
+
+my_linked_list.insert(1, 250)
+print(f"List after inserting 250 at index 1")
+my_linked_list.print_list()
+print(f"Current length: {my_linked_list.length}")
+
+my_linked_list.insert(0, 300)
+print(f"List after inserting 300 at index 0")
+my_linked_list.print_list()
+print(f"Current length: {my_linked_list.length}")
+
+my_linked_list.reverse()
+print(f"After reverse:")
+my_linked_list.print_list()
+
+
+my_linked_list.insert(5, 400)
+print(f"List after inserting 400 at index 5")
+my_linked_list.print_list()
+print(f"Current length: {my_linked_list.length}")
+
+my_linked_list.insert(100, 500)
+print(f"List after trying to insert 500 at index 100")
+my_linked_list.print_list()
+print(f"Current length: {my_linked_list.length}")
+
+my_linked_list.remove(1)
+print(f"List after removing index 1:")
+my_linked_list.print_list()
+print(f"Current length: {my_linked_list.length}")
+
+my_linked_list.remove(0)
+print(f"List after removing index 0:")
+my_linked_list.print_list()
+print(f"Current length: {my_linked_list.length}")
+
+my_linked_list.remove(my_linked_list.length - 1)
+print(f"List after removing index length - 1:")
+my_linked_list.print_list()
+print(f"Current length: {my_linked_list.length}")
 
 print("After Prepend")
 my_linked_list.prepend(20)

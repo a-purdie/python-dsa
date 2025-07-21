@@ -3,23 +3,6 @@ import linked_lists as ll
 # Return the middle node of the linked list without using the 
 # length attribute and only interating over the list once
 
-#############
-### Setup ###
-#############
-
-linked_list1 = ll.LinkedList(1)
-for i in range(4):
-    linked_list1.append(i + 2)
-
-linked_list2 = ll.LinkedList(1)
-
-linked_list3 = ll.LinkedList(1)
-linked_list3.pop()
-
-linked_list4 = ll.LinkedList(1)
-for i in range(999):
-    linked_list4.append(i + 2)
-
 ################
 ### Solution ###
 ################
@@ -64,6 +47,23 @@ def find_middle_node(linked_list: ll.LinkedList):
 ###############################
 ### Testing for Correctness ###
 ###############################
+
+### Setup ###
+
+linked_list1 = ll.LinkedList(1)
+for i in range(4):
+    linked_list1.append(i + 2)
+
+linked_list2 = ll.LinkedList(1)
+
+linked_list3 = ll.LinkedList(1)
+linked_list3.pop()
+
+linked_list4 = ll.LinkedList(1)
+for i in range(999):
+    linked_list4.append(i + 2)
+
+### Tests ###
 
 result1 = find_middle_node(linked_list1) # value should be 3
 result2 = find_middle_node(linked_list2) # value should be 1

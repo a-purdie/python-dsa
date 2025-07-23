@@ -17,8 +17,9 @@ def binary_to_decimal(linked_list):
         current_node = current_node.next
     # Not very readable, but this next bit reverses the string, I promise
     # It's because slicing is [start:stop:step], and since start and stop are 
-    # ommitted, start is just 0 and stop is just len(binary). step = -1 means 
-    # stepping backwards, so the resulting string is the reverse
+    # omitted, start is just 0 and stop is just len(binary). step = -1 means 
+    # stepping backwards one step at a time, so the resulting string is 
+    # the reverse
     binary = binary[::-1]
     result = 0 # Initialize the result we'll return
     for i in range(len(binary)):

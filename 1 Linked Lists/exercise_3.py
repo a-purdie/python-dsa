@@ -49,8 +49,8 @@ for i in range(999):
 
 result1 = kth_node_from_end(linked_list1, 2) # Return node with value 4
 result2 = kth_node_from_end(linked_list2, 1) # Return node with value 1
-result3 = kth_node_from_end(linked_list3, 3) # Should return None
-result4 = kth_node_from_end(linked_list4, 600)
+result3 = kth_node_from_end(linked_list3, 3) # Return None
+result4 = kth_node_from_end(linked_list4, 600) # Return node with value 401
 
 print(
     f"Result 1: {result1.value} | Result 2: {result2.value} | "

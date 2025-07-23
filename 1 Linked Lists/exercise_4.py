@@ -54,7 +54,7 @@ for i in range(4):
     linked_list1.append(i + 2)
 
 # This list looks like 1 2 3 4 5 ... 998 999 1000; no dups
-linked_list2 = ll.LinkedList(1) # A long, even cardinality linked list
+linked_list2 = ll.LinkedList(1)
 for i in range(999):
     linked_list2.append(i + 2)
 

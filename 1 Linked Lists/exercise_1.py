@@ -50,16 +50,17 @@ def find_middle_node(linked_list: ll.LinkedList):
 
 ### Setup ###
 
-linked_list1 = ll.LinkedList(1)
+
+linked_list1 = ll.LinkedList(1) # A short, odd cardinality linked list
 for i in range(4):
     linked_list1.append(i + 2)
 
-linked_list2 = ll.LinkedList(1)
+linked_list2 = ll.LinkedList(1) # A linked list with a single element
 
-linked_list3 = ll.LinkedList(1)
+linked_list3 = ll.LinkedList(1) # An empty linked list
 linked_list3.pop()
 
-linked_list4 = ll.LinkedList(1)
+linked_list4 = ll.LinkedList(1) # A long, even cardinality linked list
 for i in range(999):
     linked_list4.append(i + 2)
 
